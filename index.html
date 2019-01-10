@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title> FitnessApp | Početna </title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Calendar -->
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <link href="css/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="css/plugins/fullcalendar/fullcalendar.print.css" rel='stylesheet' media='print'>
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .filler,
+        #treninzi1,
+        #treninzi2,
+        #klijenti,
+        #planovi-prehrane,
+        #placanja {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- NAVBAR -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img/profile_small.jpg" />
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">Steven</span>
+                                <span class="text-muted text-xs block">Osobni trener<!--<b class="caret"></b>--></span>
+                            </a>
+                        </div>
+                        <div class="logo-element">
+                            <!--IN+-->
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Početna stranica</span></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-heartbeat"></i> <span class="nav-label">Treninzi</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="treninzi.html">Odrađeni treninzi</a></li>
+                            <li><a href="kreirajTrening.html">Novi trening</a></li>
+                            <li>
+                                <a href="#" id="damian">Predlošci <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="treningPredlosci.html">Popis predložaka</a>
+                                    </li>
+                                    <li>
+                                        <a href="kreirajPredložakTreninga.html">Dodaj predložak</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" id="damian">Vježbe <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="Vježbe.html">Enciklopedija vježbi</a>
+                                    </li>
+                                    <li>
+                                        <a href="kreirajVježbu.html">Dodaj vježbu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">Prehrana </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="PlanoviPrehrane.html">Planovi prehrane</a></li>
+                            <li><a href="kreirajPlan.html">Novi plan prehrane</a></li>
+                            <li>
+                                <a href="#" id="damian">Predlošci <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="PredlosciPlanaPrehrane.html">Lista predložaka</a>
+                                    </li>
+                                    <li>
+                                        <a href="KreirajPredlozakPlanaPrehrane.html">Dodaj predložak</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" id="damian">Obroci <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="Obroci.html">Lista obroka</a>
+                                    </li>
+                                    <li>
+                                        <a href="KreirajObrok.html">Dodaj obrok</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" id="damian">Namirnice <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="Namirnice.html">Lista namirnica</a>
+                                    </li>
+                                    <li>
+                                        <a href="KreirajNamirnicu.html">Dodaj namirnicu</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-user"></i> <span class="nav-label">Klijenti</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="Klijenti.html">Popis klijenata</a></li>
+                            <li><a href="DetaljniPodaciOKlijentu.html">Detaljni podaci</a></li>
+                            <li><a href="DodajNovogKlijenta.html">Dodaj novog klijenta</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="SveUplate.html"><i class="fa fa-credit-card"></i><span class="nav-label">Financije</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="SveUplate.html">Povijest uplata</a></li>
+                            <li><a href="DodajUplatu.html">Dodaj novu uplatu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+
+            <!-- TOP BAR -->
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li style="padding: 20px">
+                            <span class="m-r-sm text-muted welcome-message">Dobrodošli.</span>
+                        </li>
+
+                        <li>
+                            <a href="login.html">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- TOP BAND -->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-12">
+                    <h1>Dobrodošao STEVEN!</h1>
+                </div>
+            </div>
+
+            <!-- CORE -->
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+
+                    <!-- CALENDAR -->
+                    <div class="col-lg-5">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h2>Pregled današnjeg dana</h2>
+                            </div>
+                            <div class="ibox-content">
+                                <div id="calendar" class="fc fc-unthemed fc-ltr"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WIDGETI I TABLE -->
+                    <div class="col-lg-7">
+
+                        <!-- WIDGETI -->
+                        <div class="row" style="padding-bottom:2rem;">
+                            <div class="col-lg-4">
+                                <div class="widget bg-primary p-lg text-center">
+                                    <div class="m-b-md">
+                                        <i class="fa fa-group fa-4x"></i>
+                                        <h1 class="m-xs">520</h1>
+                                        <h3 class="font-bold no-margins">
+                                            Klijenata
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="widget lazur-bg p-lg text-center">
+                                    <div class="m-b-md">
+                                        <i class="fa fa-heartbeat fa-4x"></i>
+                                        <h1 class="m-xs">4244</h1>
+                                        <h3 class="font-bold no-margins">
+                                            Odrađenih treninga
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="widget yellow-bg p-lg text-center">
+                                    <div class="m-b-md">
+                                        <i class="fa fa-credit-card fa-4x"></i>
+                                        <h1 class="m-xs">424,441</h1>
+                                        <h3 class="font-bold no-margins">
+                                            Kn prihoda
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TABLE -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox ">
+                                    <div class="ibox-title">
+                                        <h2>Podsjetnici</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div class="row">
+                                            <div class="col-sm-5 m-b-xs">
+                                                <select class="form-control-sm form-control input-s-sm inline" id="odaberi-top5">
+                                                    <option value="0" selected>Odaberite</option>
+                                                    <option value="treninzi">5 nadolazećih treninga</option>
+                                                    <option value="klijenti">5 najnovijih klijenata</option>
+                                                    <option value="planovi-prehrane">5 najpopularnijih planova prehrane</option>
+                                                    <option value="placanja">5 članarina koje ističu</option>
+                                                </select>
+                                            </div>
+
+
+                                            <!-- TRENINZI -->
+                                            <div class="col-sm-3 m-b-xs" id="treninzi1">
+                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-sm btn-white ">
+                                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Day
+                                                    </label>
+                                                    <label class="btn btn-sm btn-white active">
+                                                        <input type="radio" name="options" id="option2" autocomplete="off"> Week
+                                                    </label>
+                                                    <label class="btn btn-sm btn-white">
+                                                        <input type="radio" name="options" id="option3" autocomplete="off"> Month
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3" id="treninzi2">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-white" type="button" id="gumb-pokazi-sve-treninge">Pokaži sve treninge</button>
+                                                    <button class="btn btn-primary" type="button" id="gumb-dodaj-novi-trening">Dodaj novi trening</button>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- KLIJENTI -->
+                                            <div class="col-sm-3 m-b-xs filler"></div>
+                                            <div class="col-sm-3" id="klijenti">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-white" type="button" id="gumb-pokazi-sve-klijente">Pokaži sve klijente</button>
+                                                    <button class="btn btn-primary" type="button" id="gumb-dodaj-novog-klijenta">Dodaj novog klijenta</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- PLANOVI PREHRANE -->
+                                            <div class="col-sm-3 m-b-xs filler"></div>
+                                            <div class="col-sm-3" id="planovi-prehrane">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-white" type="button" id="gumb-pokazi-sve-planove">Pokaži sve planove</button>
+                                                    <button class="btn btn-primary" type="button" id="gumb-dodaj-novi-plan">Dodaj novi plan</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- PLAĆANJA -->
+                                            <div class="col-sm-3 m-b-xs filler"></div>
+                                            <div class="col-sm-3" id="placanja">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-white" type="button" id="gumb-pokazi-sva-placanja">Pokaži sva plaćanja</button>
+                                                    <button class="btn btn-primary" type="button" id="gumb-dodaj-novu-uplatu">Dodaj novu uplatu</button>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- TRENINZI TABLE -->
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Project </th>
+                                                    <th>Completed </th>
+                                                    <th>Task</th>
+                                                    <th>Date</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input type="checkbox" checked class="i-checks" name="input[]"></td>
+                                                    <td>Project<small>This is example of project</small></td>
+                                                    <td><span class="pie">0.52/1.561</span></td>
+                                                    <td>20%</td>
+                                                    <td>Jul 14, 2013</td>
+                                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" class="i-checks" name="input[]"></td>
+                                                    <td>Alpha project</td>
+                                                    <td><span class="pie">6,9</span></td>
+                                                    <td>40%</td>
+                                                    <td>Jul 16, 2013</td>
+                                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" class="i-checks" name="input[]"></td>
+                                                    <td>Betha project</td>
+                                                    <td><span class="pie">3,1</span></td>
+                                                    <td>75%</td>
+                                                    <td>Jul 18, 2013</td>
+                                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="checkbox" class="i-checks" name="input[]"></td>
+                                                    <td>Gamma project</td>
+                                                    <td><span class="pie">4,9</span></td>
+                                                    <td>18%</td>
+                                                    <td>Jul 22, 2013</td>
+                                                    <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> Example Company &copy; 2014-2018
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/fullcalendar/moment.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Sparkline demo data  -->
+    <script src="js/demo/sparkline-demo.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="js/plugins/toastr/toastr.min.js"></script>
+
+    <!-- Full Calendar -->
+    <script src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            /* initialize the calendar
+            -----------------------------------------------------------------*/
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'agendaDay',
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function () {
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: new Date(y, m, 1)
+                    },
+                    {
+                        title: 'Long Event',
+                        start: new Date(y, m, d - 5),
+                        end: new Date(y, m, d - 2)
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d - 3, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: new Date(y, m, d + 4, 16, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Meeting',
+                        start: new Date(y, m, d, 10, 30),
+                        allDay: false
+                    },
+                    {
+                        title: 'Lunch',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: new Date(y, m, d + 1, 19, 0),
+                        end: new Date(y, m, d + 1, 22, 30),
+                        allDay: false
+                    },
+                    {
+                        title: 'Click for Google',
+                        start: new Date(y, m, 28),
+                        end: new Date(y, m, 29),
+                        url: 'http://google.com/'
+                    }
+                ]
+
+            });
+
+            $("#odaberi-top5").on("change", function (event) {
+                var vrijednost = $(this).val();
+
+                if (vrijednost === "0") {
+
+                    $("#treninzi1").hide();
+                    $("#treninzi2").hide();
+                    $("#klijenti").hide();
+                    $("#planovi-prehrane").hide();
+                    $("#placanja").hide();
+                }
+            });
+
+            $("#odaberi-top5").on("change", function (event) {
+                var vrijednost = $(this).val();
+
+                if (vrijednost === "treninzi") {
+
+                    $("#treninzi1").show();
+                    $("#treninzi2").show();
+                    $("#klijenti").hide();
+                    $("#planovi-prehrane").hide();
+                    $("#placanja").hide();
+                }
+            });
+
+            $("#odaberi-top5").on("change", function (event) {
+                var vrijednost = $(this).val();
+
+                if (vrijednost === "klijenti") {
+
+                    $("#treninzi1").hide();
+                    $("#treninzi2").hide();
+                    $("#klijenti").show();
+                    $("#planovi-prehrane").hide();
+                    $("#placanja").hide();
+                }
+            });
+
+            $("#odaberi-top5").on("change", function (event) {
+                var vrijednost = $(this).val();
+
+                if (vrijednost === "planovi-prehrane") {
+
+                    $("#treninzi1").hide();
+                    $("#treninzi2").hide();
+                    $("#klijenti").hide();
+                    $("#planovi-prehrane").show();
+                    $("#placanja").hide();
+                }
+            });
+
+            $("#odaberi-top5").on("change", function (event) {
+                var vrijednost = $(this).val();
+
+                if (vrijednost === "placanja") {
+
+                    $("#treninzi1").hide();
+                    $("#treninzi2").hide();
+                    $("#klijenti").hide();
+                    $("#planovi-prehrane").hide();
+                    $("#placanja").show();
+                }
+            });
+
+            $("#gumb-dodaj-novi-trening").click(function () {
+                window.location.href = "kreirajTrening.html";
+            });
+
+            $("#gumb-pokazi-sve-treninge").click(function () {
+                window.location.href = "treninzi.html";
+            });
+
+            $("#gumb-pokazi-sve-klijente").click(function () {
+                window.location.href = "klijenti.html";
+            });
+
+            $("#gumb-dodaj-novog-klijenta").click(function () {
+                window.location.href = "DodajNovogKlijenta.html";
+            });
+
+            $("#gumb-pokazi-sve-planove").click(function () {
+                window.location.href = "PlanoviPrehrane.html";
+            });
+
+            $("#gumb-dodaj-novi-plan").click(function () {
+                window.location.href = "KreirajPlan.html";
+            });
+
+            $("#gumb-pokazi-sva-placanja").click(function () {
+                window.location.href = "SveUplate.html";
+            });
+
+            $("#gumb-dodaj-novu-uplatu").click(function () {
+                window.location.href = "DodajUplatu.html";
+            });
+        });
+
+    </script>
+</body>
+</html>
